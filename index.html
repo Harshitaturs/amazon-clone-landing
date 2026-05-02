@@ -6,14 +6,42 @@
     <title> Harshit's Amazon clone Project 001</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="location-modal.css">
+    <link rel="stylesheet" href="cart.css">
 </head>
+<div id="locationModal" class="modal-overlay" onclick="closeOnOverlay(event)">
+    <div class="modal-box">
+        <div class="modal-header">
+            <h3>Choose your location</h3>
+            <span class="modal-close" onclick="closeLocationModal()">✕</span>
+        </div>
+        <p class="modal-sub">Delivery options and delivery speeds may vary for different locations</p>
+        <button class="modal-signin-btn">Sign in to see your addresses</button>
+        <div class="modal-divider"><span>or enter a US zip code</span></div>
+        <div class="modal-zip">
+            <input type="text" class="zip-input" placeholder="">
+            <button class="apply-btn">Apply</button>
+        </div>
+        <div class="modal-divider"><span>or ship outside the US</span></div>
+        <select class="country-select">
+            <option>Choose</option>
+            <option>India</option>
+            <option>United Kingdom</option>
+            <option>Canada</option>
+        </select>
+        <div class="modal-footer">
+            <button class="done-btn" onclick="closeLocationModal()">Done</button>
+        </div>
+    </div>
+</div>
+
 <body>
     <header id="top-of-page">
             <div class="navbar"> 
                   <div class="nav-logo border">      
                      <div class="logo"> </div>
                 </div>
-                <div class="nav-address border"> 
+               <div class="nav-address border" onclick="openLocationModal()">
                         <p class="add-first">Deliver to </p>
                         <div class="add-icon">
                        <i class="fa-solid fa-location-dot"></i>
